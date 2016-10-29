@@ -11,16 +11,13 @@
     <meta name="description" content="{{description}}">
   {{/if}}
 
+    {{addCSS "/css/icomoon.css"                   prepend=true}}
     {{addCSS "/css/main.css"                       prepend=true}}
     {{addCSS "/vendor/normalize-css/normalize.css" prepend=true}}
 
   {{#css}}
     <link rel="stylesheet" href="{{{url}}}">
   {{/css}}
-
-  {{#if pictos}}
-    <link rel="stylesheet" href="//get.pictos.cc/fonts/{{pictos}}">
-  {{/if}}
 
   {{#if typekit}}
     <script src="//use.typekit.net/{{typekit}}.js"></script>

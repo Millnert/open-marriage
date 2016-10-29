@@ -54,6 +54,7 @@ textarea:focus {
     border: 1px solid #8BBCEA;
 }
 
+/*
 [data-icon]:before,
 [data-icon]:after {
     font-family: 'Pictos Custom';
@@ -62,6 +63,7 @@ textarea:focus {
 [data-icon]:before {
     content: attr(data-icon);
 }
+*/
 
 .l-grid,
 .l-grid-1-2 {
@@ -117,6 +119,7 @@ textarea:focus {
 
 button,
 .button {
+    /*height: 36px;*/
     position: relative;
     display: inline-block;
     *display: inline;
