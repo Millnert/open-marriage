@@ -1,4 +1,4 @@
-YUI.add('le-wedding', function (Y) {
+YUI.add('le-dinner', function (Y) {
 
     var cal = Y.one('.cal'),
         graphic;
