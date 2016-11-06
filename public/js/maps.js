@@ -11,7 +11,7 @@ YUI.add('le-maps', function (Y) {
         var map = new mapboxgl.Map({
             container: 'map', // container id
             style: 'mapbox://styles/millnert/civ6u34b500572ilc703iaagy', //stylesheet location
-            center: [13.208, 55.710], // starting position
+            center: [13.207675, 55.710529], // starting position
             zoom: 18 // starting zoom
 });
     });
