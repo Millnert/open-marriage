@@ -3,22 +3,8 @@ YUI.add('le-maps', function (Y) {
     var isRetina = Y.config.win.devicePixelRatio >= 2;
 
     Y.all('[data-map]').each(function (mapNode) {
-        mapbox.load(mapNode.getData('map'), function (data) {
-            var map = mapbox.map(mapNode.getDOMNode(), [
-                data.layer,
-                data.markers
-            ], null, [
-                MM.DoubleClickHandler(),
-                MM.DragHandler()
-            ]);
-
-            if (isRetina) {
-                map.tileSize = {x: 128, y: 128};
-            }
-
-            map.ui.zoomer.add();
-            map.centerzoom(data.center, data.zoom);
-        });
+        L.mapbox.accessToken = 'pk.eyJ1IjoibWlsbG5lcnQiLCJhIjoiY2l2NnUxNjF2MDAwMTJ4bXZqNmJ4eHZuMiJ9.8CvG2KOAWS3dzDzPFBDNkg';
+        var map = L.mapbox.map('map', 'mapbox.streets').setView([40, -74.50], 9);
     });
 
 }, '1.8.0', {
