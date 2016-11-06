@@ -6,14 +6,14 @@ var async = require('async'),
     invs         = require('../lib/invitations'),
     guests       = require('../lib/guests');
 
-exports.pub    = pub;
-exports.resend = resend;
-exports.login  = login;
-exports.edit   = edit;
-exports.brunch = brunch;
+exports.pub       = pub;
+exports.resend    = resend;
+exports.login     = login;
+exports.edit      = edit;
+exports.badminton = badminton;
 
 function pub(req, res, next) {
-    if (req.afterWedding) {
+    if (req.afterEvent) {
         delete req.session.invitation;
         return res.render('rsvp/after');
     }
@@ -32,7 +32,7 @@ function resend(req, res, next) {
     var email = req.body.email.trim();
 
     // Always redirect to "/rsvp/" after the wedding.
-    if (req.afterWedding) {
+    if (req.afterEvent) {
         return res.redirect('/rsvp/');
     }
 
@@ -70,7 +70,7 @@ function login(req, res, next) {
 
     // Prevent RSVP logins after the wedding has happened, and _always_ redirect
     // to "/rsvp/".
-    if (req.afterWedding) {
+    if (req.afterEvent) {
         delete req.session.invitation;
         return res.redirect('/rsvp/');
     }
@@ -124,22 +124,22 @@ function edit(req, res) {
     }
 }
 
-function brunch(req, res) {
+function badminton(req, res) {
     var notAttending;
 
     // Always redirect to "/rsvp/" after the wedding.
-    if (req.afterWedding) {
+    if (req.afterEvent) {
         return res.redirect('/rsvp/');
     }
 
     if (!req.invitation) {
-        return res.render('rsvp/brunch/public');
+        return res.render('rsvp/badminton/public');
     }
 
     if (req.method === 'POST') {
         async.each(req.invitation.guests, function (guest, callback) {
             guests.updateGuest(guest.id, {
-                is_attending_brunch: !req.body.hasOwnProperty('not-attending')
+                is_attending_badminton: !req.body.hasOwnProperty('not-attending')
             }, callback);
         }, function (err) {
             if (err) { return next(err); }
@@ -150,12 +150,12 @@ function brunch(req, res) {
     }
 
     notAttending = req.invitation.guests.some(function (guest) {
-        return !guest.is_attending_brunch;
+        return !guest.is_attending_badminton;
     });
 
     if (notAttending) {
-        res.render('rsvp/brunch/not-attending');
+        res.render('rsvp/badminton/not-attending');
     } else {
-        res.render('rsvp/brunch/respond');
+        res.render('rsvp/badminton/respond');
     }
 }
