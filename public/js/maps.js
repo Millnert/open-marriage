@@ -4,7 +4,7 @@ YUI.add('le-maps', function (Y) {
 
     Y.all('[data-map]').each(function (mapNode) {
         L.mapbox.accessToken = 'pk.eyJ1IjoibWlsbG5lcnQiLCJhIjoiY2l2NnUxNjF2MDAwMTJ4bXZqNmJ4eHZuMiJ9.8CvG2KOAWS3dzDzPFBDNkg';
-        var map = L.mapbox.map('map', 'mapbox.streets').setView([40, -74.50], 9);
+        var map = L.mapbox.map('map', 'mapbox.streets').setView([13.208, 55.710], 17.4);
     });
 
 }, '1.8.0', {
