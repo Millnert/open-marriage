@@ -33,7 +33,7 @@ app.engine('hbs', exphbs({
 app.expose(config.yui.config, 'window.YUI_config');
 
 app.locals({
-    title   : 'Martin Millnert',
+    title   : 'Behnaz PhD Dissertation & Dinner',
     appTitle: 'Behnaz PhD Dissertation & Dinner',
 
     version    : config.version,
