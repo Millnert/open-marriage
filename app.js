@@ -12,7 +12,7 @@ var combo   = require('combohandler'),
 
 // -- Configure ----------------------------------------------------------------
 
-app.set('name', 'Leslie-Eric Wedding');
+app.set('name', 'Martin Millnert Open-Event');
 app.set('env', config.env);
 app.set('port', config.port);
 app.set('views', config.dirs.views);
@@ -33,16 +33,15 @@ app.engine('hbs', exphbs({
 app.expose(config.yui.config, 'window.YUI_config');
 
 app.locals({
-    title   : 'Leslie & Eric',
-    appTitle: 'L&E Wedding',
+    title   : 'Martin Millnert',
+    appTitle: 'Behnaz PhD Dissertation & Dinner',
 
     version    : config.version,
     yui_version: config.yui.version,
 
     nav: [
-        {id: 'wedding',   url: '/wedding/',   label: 'Wedding'},
+        {id: 'dinner',    url: '/dinner/',    label: 'Dinner'},
         {id: 'logistics', url: '/logistics/', label: 'Logistics'},
-        {id: 'registry',  url: '/registry/',  label: 'Registry'},
         {id: 'rsvp',      url: '/rsvp/',      label: 'RSVP'}
     ],
 
@@ -50,7 +49,6 @@ app.locals({
         logistics: [
             {id: 'logistics', url: '/logistics/',         label: 'Logistics'},
             {id: 'hotels',    url: '/logistics/hotels/',  label: 'Hotels'},
-            {id: 'outings',   url: '/logistics/outings/', label: 'Outings'}
         ]
     },
 
@@ -101,19 +99,15 @@ if (config.isDevelopment) {
 
 app.get('/', routes.render('home'));
 
-app.get('/wedding/', routes.render('wedding'));
+app.get('/dinner/', routes.render('dinner'));
 
 app.get('/logistics/',         routes.render('logistics'));
 app.get('/logistics/hotels/',  routes.render('logistics/hotels'));
-app.get('/logistics/outings/', routes.render('logistics/outings'));
 
 app.get('/registry/', routes.render('registry'));
 
 app.get( '/rsvp/',                       routes.rsvp.pub, routes.rsvp.edit);
 app.post('/rsvp/',                       routes.rsvp.resend);
-app.get( '/rsvp/brunch/',                routes.rsvp.brunch);
-app.post('/rsvp/brunch/',                routes.rsvp.brunch);
-app.get( '/rsvp/brunch/:invitation_key', routes.rsvp.login);
 app.get( '/rsvp/:invitation_key',        routes.rsvp.login);
 
 app.all( '/invitations/:invitation/*',       middleware.auth.ensureInvitation);
