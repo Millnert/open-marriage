@@ -96,10 +96,10 @@ function login(req, res, next) {
 
 function edit(req, res) {
     var invitation = req.invitation,
-        guestsAttending, guestsNeedMeal;
+        guestsAttending, guestsNeedDrink;
 
-    res.locals.meals = guests.MEALS;
-    res.expose(guests.MEALS, 'MEALS');
+    res.locals.drinks = guests.DRINKS;
+    res.expose(guests.DRINKS, 'DRINKS');
 
     if (!invitation.rsvpd) {
         return res.render('rsvp/respond');
@@ -110,12 +110,12 @@ function edit(req, res) {
     });
 
     if (guestsAttending) {
-        guestsNeedMeal = invitation.guests.some(function (guest) {
-            return guest.is_attending && !guest.meal;
+        guestsNeedDrink = invitation.guests.some(function (guest) {
+            return guest.is_attending && !guest.drink;
         });
 
-        res.locals.status = guestsNeedMeal ?
-            'Choose which Main Course you would like.' :
+        res.locals.status = guestsNeedDrink ?
+            'Choose if you want alcohol or alcohol-free option.' :
             'Everything is set with your invitation response.';
 
         res.render('rsvp/attending');

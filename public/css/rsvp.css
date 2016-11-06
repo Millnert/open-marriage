@@ -133,23 +133,23 @@
 .guest-name-val input {
     width: 100%;
 }
-.guest-meal {
+.guest-drink {
     margin-top: 0;
 }
-/*.guest-meal-val label {
+/*.guest-drink-val label {
     width: 33%;
 }*/
-.guest-meal-val-label {
+.guest-drink-val-label {
     margin-right: 1em;
 }
-.guest-meal-val label:last-child .guest-meal-val-label {
+.guest-drink-val label:last-child .guest-drink-val-label {
     margin-right: 0;
 }
 
 .guest-title-val,
 .guest-name-val,
 .guest-attending-val,
-.guest-meal-val,
+.guest-drink-val,
 .inv-address-val,
 .inv-done {
     display: none;
@@ -178,13 +178,13 @@
 }
 .is-inv-editing .inv-address-val,
 .is-inv-editing .guest-attending-val,
-.is-inv-editing .guest-meal-val {
+.is-inv-editing .guest-drink-val {
     display: block;
 }
 .is-inv-editing .inv-address,
 .is-inv-editing .guest-salutation,
 .is-inv-editing .guest-attending,
-.is-inv-editing .guest-meal,
+.is-inv-editing .guest-drink,
 .is-inv-editing .inv-edit {
     display: none;
 }

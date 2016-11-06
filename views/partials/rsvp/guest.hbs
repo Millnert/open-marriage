@@ -21,13 +21,13 @@
             </label>
         </p>
 
-        <p class="guest-meal"><b>Main Course:</b> <span>{{guestMeal}}</span></p>
-        <p class="guest-meal-val l-grid">
-            <b class="l-grid-u-full">Main Course:</b>
-          {{#each mealOptions}}
+        <p class="guest-drink"><b>Drink Options:</b> <span>{{guestDrink}}</span></p>
+        <p class="guest-drink-val l-grid">
+            <b class="l-grid-u-full">Drink Options:</b>
+          {{#each drinkOptions}}
             <label class="l-grid-u">
-                <input type="radio" data-meal name="guest-meal-{{../id}}" value="{{id}}" {{isGuestMeal ../meal}}>
-                <span class="guest-meal-val-label">{{label}}</span>
+                <input type="radio" data-drink name="guest-drink-{{../id}}" value="{{id}}" {{isGuestDrink ../drink}}>
+                <span class="guest-drink-val-label">{{label}}</span>
             </label>
           {{/each}}
         </p>

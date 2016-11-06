@@ -40,20 +40,20 @@ YUI.add('le-rsvp', function (Y) {
     Y.Guest = Y.Base.create('guest', Y.Model, [Y.ModelSync.REST], {
         root: '/guests/',
 
-        mealLabel: function () {
-            var meal = '';
+        drinkLabel: function () {
+            var drink = '';
 
-            Y.Array.some(Y.Guest.MEALS, function (mealOption) {
-                if (mealOption.id === this.get('meal')) {
-                    meal = mealOption.label;
+            Y.Array.some(Y.Guest.DRINKS, function (drinkOption) {
+                if (drinkOption.id === this.get('drink')) {
+                    drink = drinkOption.label;
                     return true;
                 }
             }, this);
 
-            return meal;
+            return drink;
         }
     }, {
-        MEALS: YUI.Env.LE.MEALS
+        DRINKS: YUI.Env.LE.DRINKS
     });
 
 
@@ -123,7 +123,7 @@ YUI.add('le-rsvp', function (Y) {
     // -- Views ----------------------------------------------------------------
 
     Y.InvitationView = Y.Base.create('invitationView', Y.View, [], {
-        guestNeedsMealMsg: 'Choose which Main Course you would like.',
+        guestNeedsDrinkMsg: 'Choose which Drink Option you prefer.',
         invitationDoneMsg: 'Everything is set with your invitation response.',
 
         events: {
@@ -131,7 +131,7 @@ YUI.add('le-rsvp', function (Y) {
             '[data-done]'     : {click: 'done'},
             '[data-add-guest]': {click: 'addGuest'},
             '[data-attending]': {click: 'proposeUpdates'},
-            '[data-meal]'     : {click: 'proposeUpdates'},
+            '[data-drink]'    : {click: 'proposeUpdates'},
             'input, textarea' : {blur: 'proposeUpdates'}
         },
 
@@ -185,11 +185,11 @@ YUI.add('le-rsvp', function (Y) {
             };
 
             container.all('[data-guest]').each(function (node) {
-                var meal = null;
+                var drink = null;
 
-                node.all('[data-meal]').some(function (mealOption) {
-                    if (mealOption.get('checked')) {
-                        meal = mealOption.get('value');
+                node.all('[data-drink]').some(function (drinkOption) {
+                    if (drinkOption.get('checked')) {
+                        drink = drinkOption.get('value');
                         return true;
                     }
                 });
@@ -199,7 +199,7 @@ YUI.add('le-rsvp', function (Y) {
                     title       : node.one('[data-title]').get('value'),
                     name        : node.one('[data-name]').get('value'),
                     is_attending: node.one('[data-attending]').get('checked'),
-                    meal        : meal
+                    drink       : drink
                 });
             });
 
@@ -212,14 +212,14 @@ YUI.add('le-rsvp', function (Y) {
         syncUI: function () {
             var container  = this.get('container'),
                 invitation = this.get('invitation'),
-                guestsNeedsMeal;
+                guestsNeedsDrink;
 
-            guestsNeedsMeal = invitation.get('guests').some(function (guest) {
-                return guest.get('is_attending') && !guest.get('meal');
+            guestsNeedsDrink = invitation.get('guests').some(function (guest) {
+                return guest.get('is_attending') && !guest.get('drink');
             });
 
-            container.one('.inv-status').set('text', guestsNeedsMeal ?
-                this.guestNeedsMealMsg : this.invitationDoneMsg);
+            container.one('.inv-status').set('text', guestsNeedsDrink ?
+                this.guestNeedsDrinkMsg : this.invitationDoneMsg);
 
             container.all('address, [data-address]')
                 .setHTML(Y.Escape.html(invitation.get('address')));
@@ -240,9 +240,9 @@ YUI.add('le-rsvp', function (Y) {
 
                 node.one('[data-attending]').set('checked', isAttending);
 
-                node.one('.guest-meal span').set('text', guest.mealLabel());
-                node.all('[data-meal]').set('checked', false)
-                    .filter('[value=' + guest.get('meal') + ']')
+                node.one('.guest-drink span').set('text', guest.drinkLabel());
+                node.all('[data-drink]').set('checked', false)
+                    .filter('[value=' + guest.get('drink') + ']')
                         .set('checked', true);
             }, this);
         }
@@ -251,8 +251,8 @@ YUI.add('le-rsvp', function (Y) {
 
     Y.AnnouncementView = Y.Base.create('announcementView', Y.View, [], {
         namesSeparator : ' <span class="ann-sep">&amp;</span> ',
-        attendingMsg   : 'Yay, We’re Happy You’ll Be Attending!',
-        notAttendingMsg: 'We’re Sorry You Won’t Be Attending.',
+        attendingMsg   : 'Yay, I’m Happy You’ll Be Attending!',
+        notAttendingMsg: 'I’m Sorry You Won’t Be Attending.',
 
         initializer: function () {
             this.get('guests').after('guest:change', this.syncUI, this);
