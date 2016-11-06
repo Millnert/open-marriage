@@ -180,7 +180,7 @@ YUI.add('le-rsvp', function (Y) {
                 invitation;
 
             invitation = {
-                address: container.one('[data-address]').get('value'),
+                comment: container.one('[data-comment]').get('value'),
                 guests : []
             };
 
@@ -221,8 +221,8 @@ YUI.add('le-rsvp', function (Y) {
             container.one('.inv-status').set('text', guestsNeedsDrink ?
                 this.guestNeedsDrinkMsg : this.invitationDoneMsg);
 
-            container.all('address, [data-address]')
-                .setHTML(Y.Escape.html(invitation.get('address')));
+            container.all('comment, [data-comment]')
+                .setHTML(Y.Escape.html(invitation.get('comment')));
 
             invitation.get('guests').each(function (guest) {
                 var node        = this.getGuestNode(guest),
