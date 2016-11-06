@@ -16,6 +16,14 @@ exports.config  = {
             fullpath: 'https://api.mapbox.com/mapbox.js/v2.4.0/mapbox.js',
             requires: ['mapbox-css']
         }
+
+        'mapbox-gl-css': 'https://api.tiles.mapbox.com/mapbox-gl-js/v0.26.0/mapbox-gl.css',
+
+        'mapbox-gl': {
+            fullpath: 'https://api.tiles.mapbox.com/mapbox-gl-js/v0.26.0/mapbox-gl.js',
+            requires: ['mapbox-gl-css']
+        }
+
     },
 
     groups: {
@@ -41,7 +49,7 @@ exports.config  = {
 
                 'le-maps': {
                     path    : 'js/maps.js',
-                    requires: ['node-base', 'mapbox']
+                    requires: ['node-base', 'mapbox-gl']
                 },
 
                 'le-rsvp': {
