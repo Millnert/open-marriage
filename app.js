@@ -40,9 +40,10 @@ app.locals({
     yui_version: config.yui.version,
 
     nav: [
-        {id: 'dinner',    url: '/dinner/',    label: 'Dinner'},
-        {id: 'logistics', url: '/logistics/', label: 'Logistics'},
-        {id: 'rsvp',      url: '/rsvp/',      label: 'RSVP'}
+        {id: 'dissertation', url: '/dissertation/', label: 'Dissertation'},
+        {id: 'dinner',       url: '/dinner/',       label: 'Dinner'},
+        {id: 'logistics',    url: '/logistics/',    label: 'Logistics'},
+        {id: 'rsvp',         url: '/rsvp/',         label: 'RSVP'}
     ],
 
     subnav: {
@@ -98,6 +99,8 @@ if (config.isDevelopment) {
 // -- Routes -------------------------------------------------------------------
 
 app.get('/', routes.render('home'));
+
+app.get('/dissertation/', routes.render('dissertation'));
 
 app.get('/dinner/', routes.render('dinner'));
 
