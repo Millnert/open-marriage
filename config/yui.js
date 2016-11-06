@@ -63,8 +63,8 @@ exports.config  = {
                     ]
                 },
 
-                'le-wedding': {
-                    path: 'js/wedding.js',
+                'le-dinner': {
+                    path: 'js/dinner.js',
                     requires: ['le-main', 'le-maps', 'event-resize', 'graphics']
                 }
             }
