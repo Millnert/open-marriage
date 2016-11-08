@@ -134,38 +134,3 @@ function edit(req, res) {
     }
 }
 
-function badminton(req, res) {
-    var notAttending;
-
-    // Always redirect to "/rsvp/" after the wedding.
-    if (req.afterEvent) {
-        return res.redirect('/rsvp/');
-    }
-
-    if (!req.invitation) {
-        return res.render('rsvp/badminton/public');
-    }
-
-    if (req.method === 'POST') {
-        async.each(req.invitation.guests, function (guest, callback) {
-            guests.updateGuest(guest.id, {
-                is_attending_badminton: !req.body.hasOwnProperty('not-attending')
-            }, callback);
-        }, function (err) {
-            if (err) { return next(err); }
-            res.redirect(req.path);
-        });
-
-        return;
-    }
-
-    notAttending = req.invitation.guests.some(function (guest) {
-        return !guest.is_attending_badminton;
-    });
-
-    if (notAttending) {
-        res.render('rsvp/badminton/not-attending');
-    } else {
-        res.render('rsvp/badminton/respond');
-    }
-}
