@@ -32,7 +32,8 @@
           {{/each}}
         </p>
 
-        <p class="guest-attending-val">
+        <p class="guest-attending-badminton"><b>{{#unless is_attending_badminton}}Not {{/unless}}Attending Badminton</b></p>
+        <p class="guest-attending-badminton-val">
             <label>
                 <input type="checkbox" data-attending-badminton {{#if is_attending_badminton}}checked{{/if}}>
                 Is Attending Optional Tuesday 20th Badminton

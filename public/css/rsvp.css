@@ -122,6 +122,9 @@
 .guest-attending {
     font-weight: 700;
 }
+.guest-attending-badminton {
+    font-weight: 200;
+}
 .guest-title-val {
     width: 25%;
     padding-right: 0.5em;
@@ -149,6 +152,7 @@
 .guest-title-val,
 .guest-name-val,
 .guest-attending-val,
+.guest-attending-badminton-val,
 .guest-drink-val,
 .inv-comment-val,
 .inv-done {
@@ -178,12 +182,14 @@
 }
 .is-inv-editing .inv-comment-val,
 .is-inv-editing .guest-attending-val,
+.is-inv-editing .guest-attending-badminton-val,
 .is-inv-editing .guest-drink-val {
     display: block;
 }
 .is-inv-editing .inv-comment,
 .is-inv-editing .guest-salutation,
 .is-inv-editing .guest-attending,
+.is-inv-editing .guest-attending-badminton,
 .is-inv-editing .guest-drink,
 .is-inv-editing .inv-edit {
     display: none;
