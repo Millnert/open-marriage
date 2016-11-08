@@ -117,7 +117,7 @@ app.all( '/invitations/:invitation/*',       middleware.auth.ensureInvitation);
 app.get( '/invitations/:invitation/',        routes.invitations.read);
 app.put( '/invitations/:invitation/',        routes.invitations.update);
 app.get( '/invitations/:invitation/guests',  routes.invitations.readGuests);
-app.post( '/invitations/:invitation/guests', routes.invitations.addGuest);
+//app.post( '/invitations/:invitation/guests', routes.invitations.addGuest);
 app.post('/invitations/:invitation/confirm', routes.invitations.confirm);
 
 app.all('/guests/:guest/', middleware.auth.ensureGuest);
