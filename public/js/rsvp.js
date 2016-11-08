@@ -250,6 +250,11 @@ YUI.add('le-rsvp', function (Y) {
                 node.one('[data-attending]').set('checked', isAttending);
 
                 node.one('[data-attending-badminton]').set('checked', isAttendingBadminton);
+		if (isAttendingBadminton) {
+		    node.one('.guest-attending-badminton b').set('text', 'Attending Badminton');
+		} else {
+		    node.one('.guest-attending-badminton b').set('text', 'Not Attending Badminton');
+		}
 
                 node.one('.guest-drink span').set('text', guest.drinkLabel());
                 node.all('[data-drink]').set('checked', false)
