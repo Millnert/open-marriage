@@ -66,6 +66,12 @@ YUI.add('le-rsvp', function (Y) {
             });
         },
 
+        attending_badminton: function () {
+            return this.filter({asList: true}, function (guest) {
+                return guest.get('is_attending_badminton');
+            });
+        },
+
         invited: function () {
             return this.filter({asList: true}, function (guest) {
                 return !guest.get('is_plusone');
@@ -127,12 +133,13 @@ YUI.add('le-rsvp', function (Y) {
         invitationDoneMsg: 'Everything is set with your invitation response.',
 
         events: {
-            '[data-edit]'     : {click: 'edit'},
-            '[data-done]'     : {click: 'done'},
-            '[data-add-guest]': {click: 'addGuest'},
-            '[data-attending]': {click: 'proposeUpdates'},
-            '[data-drink]'    : {click: 'proposeUpdates'},
-            'input, textarea' : {blur: 'proposeUpdates'}
+            '[data-edit]'               : {click: 'edit'},
+            '[data-done]'               : {click: 'done'},
+            '[data-add-guest]'          : {click: 'addGuest'},
+            '[data-attending]'          : {click: 'proposeUpdates'},
+            '[data-attending-badminton]': {click: 'proposeUpdates'},
+            '[data-drink]'              : {click: 'proposeUpdates'},
+            'input, textarea'           : {blur: 'proposeUpdates'}
         },
 
         initializer: function () {
@@ -195,11 +202,12 @@ YUI.add('le-rsvp', function (Y) {
                 });
 
                 invitation.guests.push({
-                    id          : parseInt(node.getData('guest'), 10),
-                    title       : node.one('[data-title]').get('value'),
-                    name        : node.one('[data-name]').get('value'),
-                    is_attending: node.one('[data-attending]').get('checked'),
-                    drink       : drink
+                    id                    : parseInt(node.getData('guest'), 10),
+                    title                 : node.one('[data-title]').get('value'),
+                    name                  : node.one('[data-name]').get('value'),
+                    is_attending          : node.one('[data-attending]').get('checked'),
+                    is_attending_badminton: node.one('[data-attending-badminton]').get('checked'),
+                    drink                 : drink
                 });
             });
 
@@ -225,8 +233,9 @@ YUI.add('le-rsvp', function (Y) {
                 .setHTML(Y.Escape.html(invitation.get('comment')));
 
             invitation.get('guests').each(function (guest) {
-                var node        = this.getGuestNode(guest),
-                    isAttending = guest.get('is_attending');
+                var node                 = this.getGuestNode(guest),
+                    isAttending          = guest.get('is_attending');
+                    isAttendingBadminton = guest.get('is_attending_badminton');
 
                 if (!node) { return; }
 
@@ -239,6 +248,8 @@ YUI.add('le-rsvp', function (Y) {
                 node.one('[data-name]').set('value', guest.get('name'));
 
                 node.one('[data-attending]').set('checked', isAttending);
+
+                node.one('[data-attending-badminton]').set('checked', isAttendingBadminton);
 
                 node.one('.guest-drink span').set('text', guest.drinkLabel());
                 node.all('[data-drink]').set('checked', false)

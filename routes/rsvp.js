@@ -114,9 +114,19 @@ function edit(req, res) {
             return guest.is_attending && !guest.drink;
         });
 
-        res.locals.status = guestsNeedDrink ?
-            'Choose if you want alcohol or alcohol-free option.' :
-            'Everything is set with your invitation response.';
+        needsRsvpBadminton = invitation.guests.some(function (guest) {
+            return guest.is_attending_badminton == null;
+        });
+
+	if (guestsNeedDrink && needsRsvpBadminton) {
+	    res.locals.status = 'Pick your alcohol option and whether or not you want to participate in the badminton.';
+	} else if (guestsNeedDrink && !needsRsvpBadminton) {
+	    res.locals.status = 'Pick your alcohol option.';
+	} else if (!guestsNeedDrink && needsRsvpBadminton) {
+	    res.locals.status = 'Please decide whether or not you want to participate in the badminton.';
+	} else if (!guestsNeedDrink && !needsRsvpBadminton) {
+	    res.locals.status = 'Everything is set with your invitation response.';
+	}
 
         res.render('rsvp/attending');
     } else {
