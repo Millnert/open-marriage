@@ -1,5 +1,11 @@
 {
     "default": {
-        "driver": "pg"
+	"driver": "pg",
+	"user": "open-event",
+	"password": "ewu3EisuetheeW3ee6guthun",
+	"host": "172.17.0.6",
+	"port": 5432,
+	"database": "open-event",
+	"schema": "public"
     }
 }

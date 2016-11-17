@@ -8,6 +8,7 @@ exports.read       = read;
 exports.update     = update;
 exports.readGuests = readGuests;
 exports.confirm    = confirm;
+exports.addGuest   = addGuest;
 
 function read(req, res, next) {
     res.json(req.invitation);
@@ -30,5 +31,12 @@ function confirm(req, res, next) {
     email.sendConfirm(req.invitation, function (err) {
         if (err) { return next(err); }
         res.send(204);
+    });
+}
+
+function addGuest(req, res, next) {
+    invs.addGuestToInvitation(req.invitation.id, function (err) {
+        if (err) { return next(err); }
+	res.send(204);
     });
 }

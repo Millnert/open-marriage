@@ -136,6 +136,15 @@
 .guest-name-val input {
     width: 100%;
 }
+.guest-delete-val {
+    margin-top: 0;
+}
+.guest-delete-val-button,
+.guest-delete-val-button:before {
+    color: #9e4d08;
+    margin-top: 0;
+    background: #ffa894;
+}
 .guest-drink {
     margin-top: 0;
 }
@@ -154,6 +163,7 @@
 .guest-attending-val,
 .guest-attending-badminton-val,
 .guest-drink-val,
+.guest-delete-val,
 .inv-comment-val,
 .inv-done {
     display: none;
@@ -183,7 +193,8 @@
 .is-inv-editing .inv-comment-val,
 .is-inv-editing .guest-attending-val,
 .is-inv-editing .guest-attending-badminton-val,
-.is-inv-editing .guest-drink-val {
+.is-inv-editing .guest-drink-val,
+.is-inv-editing .guest-delete-val {
     display: block;
 }
 .is-inv-editing .inv-comment,

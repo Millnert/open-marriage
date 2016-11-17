@@ -20,7 +20,7 @@ h4 { font-size: 1em; }
 
 a:link,
 a:visited {
-    color: #216eb5;
+    color: #00cccc;
     text-decoration: none;
 }
 
@@ -188,7 +188,7 @@ a.is-button-negative {
 }
 .brand a:hover,
 .brand a:active {
-    color: #216eb5;
+    color: #00cccc;
 }
 
 .nav-list {
@@ -215,7 +215,7 @@ a.is-button-negative {
 }
 .nav-item a:hover b,
 .nav-item a:active b {
-    border-bottom: 1px solid #216eb5;
+    border-bottom: 1px solid #00cccc;
 }
 .is-nav-item-active b {
     border-bottom: 1px solid #e5e5df;
@@ -283,7 +283,7 @@ a.is-button-negative {
 }
 .subnav .nav-item:first-child a:hover,
 .subnav .nav-item:first-child a:active {
-    color: #216eb5;
+    color: #00cccc;
 }
 .subnav .nav-item:first-child b {
     border-bottom: none;
@@ -305,7 +305,7 @@ a.is-button-negative {
     font-family: "futura-pt", sans-serif;
     font-weight: 300;
     font-size: 2em;
-    color: #216eb5;
+    color: #00cccc;
 }
 .ann-secondary {
     line-height: 1.0;

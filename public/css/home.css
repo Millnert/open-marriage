@@ -26,8 +26,8 @@ body {
     background: #f2c63d;
 }
 .timeline:after {
-    content: 'h';
-    font-family: 'Pictos Custom';
+    content: 'g';
+    font-family: 'icomoon';
     font-size: 3em;
     -webkit-font-smoothing: antialiased;
     position: absolute;
@@ -124,7 +124,7 @@ body {
     height: 20em;
 }
 
-.button-wedding {
+.button-event {
     margin: 2em;
     text-align: center;
 }

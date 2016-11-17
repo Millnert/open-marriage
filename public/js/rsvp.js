@@ -1,3 +1,7 @@
+function sleep(ms) {
+	  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
 YUI.add('le-rsvp', function (Y) {
 
     // -- Y.Models Overrides ---------------------------------------------------
@@ -136,6 +140,7 @@ YUI.add('le-rsvp', function (Y) {
             '[data-edit]'               : {click: 'edit'},
             '[data-done]'               : {click: 'done'},
             '[data-add-guest]'          : {click: 'addGuest'},
+	    '[data-delete-guest]'       : {click: 'deleteGuest'},
             '[data-attending]'          : {click: 'proposeUpdates'},
             '[data-attending-badminton]': {click: 'proposeUpdates'},
             '[data-drink]'              : {click: 'proposeUpdates'},
@@ -165,16 +170,30 @@ YUI.add('le-rsvp', function (Y) {
             }, this);
 
             this.proposeUpdates({src: 'done'});
+	    this.syncUI();
         },
 
         addGuest: function (e) {
             if (e) { e.preventDefault(); }
 
             this.get('container').all('.guest').removeClass('guest-available');
-            this.get('invitation').get('guests').plusones()
-                .invoke('set', 'is_attending', true);
 
-            this.edit();
+	    var guest = {
+		invitation_id: this.get('invitation').get('id')
+	    };
+            this.fire('addGuest', {
+		guest: guest
+	    	});
+        },
+
+        deleteGuest: function (e) {
+            if (e) { e.preventDefault(); }
+	    var guest_container = e.target.get('parentNode').get('parentNode').get('parentNode').get('parentNode'),
+		guest_id = parseInt(guest_container.getData('guest'));
+
+            this.fire('deleteGuest', {
+		guest_id: guest_id
+	    	});
         },
 
         getGuestNode: function (guest) {
@@ -221,6 +240,8 @@ YUI.add('le-rsvp', function (Y) {
             var container  = this.get('container'),
                 invitation = this.get('invitation'),
                 guestsNeedsDrink;
+
+	    console.log("doing syncUI()");
 
             guestsNeedsDrink = invitation.get('guests').some(function (guest) {
                 return guest.get('is_attending') && !guest.get('drink');
@@ -375,6 +396,28 @@ YUI.add('le-rsvp', function (Y) {
         });
     };
 
+    app.addGuest = function (inv_id) {
+	var guest = new Y.Guest({invitation_id: inv_id});
+
+        guest.save(function (err, response) {
+	    if (!err) {
+                location.reload(true);
+	    }
+	});
+    };
+
+    app.deleteGuest = function (guest_id) {
+	var invitation = this.invitation,
+            guests     = invitation.get('guests'),
+	    guest      = guests.getById(guest_id);
+
+	guest.destroy({remove: true}, function (err, response) {
+	    if (!err) {
+		location.reload(true);
+	    }
+	});
+    };
+
     app.updateInvitation = function (updates) {
         updates || (updates = {});
 
@@ -427,6 +470,19 @@ YUI.add('le-rsvp', function (Y) {
 
     app.on('*:rsvp', function (e) {
         this.rsvp(e.isAttending);
+    });
+
+    app.on('*:addGuest', function (e) {
+        console.log('app.on(addGuest):e: %s', e);
+        console.log('app.on(addGuest):e.guest: %s', e.guest);
+        console.log('app.on(addGuest):e.guest.invitation_id: %s', e.guest.invitation_id);
+	this.addGuest(e.guest.invitation_id);
+    });
+
+    app.on('*:deleteGuest', function (e) {
+        console.log('app.on(deleteGuest):e: %s', e);
+        console.log('app.on(deleteGuest):e.guest_id: %s', e.guest_id);
+	this.deleteGuest(e.guest_id);
     });
 
     app.on('*:invitationUpdate', function (e) {

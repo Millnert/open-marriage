@@ -71,8 +71,8 @@ exports.config  = {
                     ]
                 },
 
-                'le-dinner': {
-                    path: 'js/dinner.js',
+                'le-event': {
+                    path: 'js/event.js',
                     requires: ['le-main', 'le-maps', 'event-resize', 'graphics']
                 }
             }
