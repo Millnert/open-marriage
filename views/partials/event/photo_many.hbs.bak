@@ -1,0 +1,14 @@
+<div class="event-photo-multi">
+<ul class="ul-float-elems">
+{{#each this}}
+<li class="li-floated-elem">
+  <div class="event-photo-multi-img">
+    <img src="{{filename}}" alt="{{alt}}" title="{{alt}}" height="{{height}}"/>
+    {{#if credit}}
+    <a class="event-photo-credit" href="{{credit.url}}">{{credit.text}}</a>
+    {{/if}}
+  </div>
+</li>
+{{/each}}
+</ul>
+</div>

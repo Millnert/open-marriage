@@ -30,6 +30,11 @@ body {
     margin: 1.5em 0;
 }
 
+.button-event {
+    margin: 2em;
+    text-align: center;
+}
+
 .cal {
     white-space: nowrap;
     overflow-x: scroll;

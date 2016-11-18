@@ -9,203 +9,347 @@
 </h1>
 
 <ol class="timeline l-grid">
-  {{#event "Getting Married"
-        time   = "October 5, 2013"
-        photo  = "/photos/engagement.jpg"
-        alt    = "Photo of Leslie and Eric in their apartment."
-        credit = "Megan Beth Photography|http://www.meganbeth.com/"}}
-
-    {{> event/header}}
-    {{> event/photo}}
-
-    <p>
-        Leslie and Eric are getting married this Fall in <strong>Easton, Maryland</strong>.
-    </p>
-
-    <p class="button-event">
-        <a class="button" data-icon="g" href="/event/">See Event Details</a>
-    </p>
-
-    {{> event/time}}
-  {{/event}}
-
-  {{#event "Celebrated Engagement"
-        time  = "December 2, 2012"
-        photo = "/photos/napa.jpg"
-        alt   = "Photo of vinyard in Napa, CA"}}
-
-    {{> event/header}}
-    {{> event/photo}}
-
-    <p>
-        After getting engaged in San Francisco, Leslie and Eric headed north out of the city to Napa Valley. They celebrated their engagement by spending a few romantic days touring wineries and vineyards.
-    </p>
-
-    {{> event/time}}
-  {{/event}}
-
-  {{#event "Got Engaged"
-        time = "November 30, 2012 @ 3:00pm"
-        map  = "ericf.map-2kpl38sn"}}
-
-    {{> event/header}}
-    {{> event/map}}
-
-    <p>
-        Eric had to improvise how he was going to propose to Leslie. The original plan was to spend the day hiking Mt. Tamalpais, and when arriving at a scenic view, he'd ask Leslie to marry him. But the weather wasn’t going to be accommodating…
-    </p>
-    <p>
-        After a leisurely morning in Union Square, Leslie and Eric found themselves at the Apple store (where else :). At this point Eric was contemplating the possible ways he was going to pull off this proposal. They decided their next stop was going to be the SF MOMA.
-    </p>
-    <p>
-        On their way towards the museum, the weather broke and the Sun came out. Leslie had the wise idea that they shouldn’t spend the only sunny time of the day inside. Thinking on his feet, Eric suggested they head towards Twin Peaks.
-    </p>
-    <p>
-        Once up on Twin Peaks, after looking down on the city from the pedestrian lookout, Eric suggested that they hike to the top of one of the hills. At the top they could see the Pacific Ocean, the Golden Gate Bridge, and downtown San Francisco. Looking up at Leslie with the city behind him, Eric ask Leslie to marry him. And of course <strong>she said “Yes!”</strong>
-    </p>
-
-    {{> event/time}}
-  {{/event}}
-
-    <li class="timeline-events">
-        <ol class="l-grid">
-           {{#event "Left for SF “Vacation”"
-                who  = "leslie"
-                time = "November 29, 2012"}}
-
-            {{> event/header}}
-
-            <p>
-                Leslie was all ready to meet Eric in San Francisco to go on a “vacation” they'd planned. She had no idea Eric had an engagement ring with him…
-            </p>
-            <p>
-                At the Boston airport, Leslie learned her flight was going to be delayed by three hours. Monster storms were pummeling the Bay Area with rain and high winds; leaving only one runway open at SFO. This meant she wouldn’t arrive until 3:00am PST :(
-            </p>
-            <p>
-                Eric was alone in a San Francisco hotel room, anxiously awaiting Leslie’s arrival.
-            </p>
-
-            {{> event/time}}
-          {{/event}}
-
-          {{#event "Got the Ring"
-                who  = "eric"
-                time = "November 7, 2012"}}
-
-            {{> event/header}}
-
-            <p>
-                Eric knew it was time. Leslie and he had been together for almost five years, and he wanted to spend his life with her.
-            </p>
-            <p>
-                Eric wanted to get a ring that would accurately symbolize his feelings for Leslie. He worked with his Mom’s cousin—who’s a third generation jeweler—to create a beautiful custom ring he knew Leslie would love.
-            </p>
-            <p>
-                Leslie had not expected a thing; she assumed Eric was procrastinating on this whole proposal thing and figured she'd have to keep waiting… patiently :)
-            </p>
-
-            {{> event/time}}
-          {{/event}}
-        </ol>
-    </li>
-
-  {{#event "Moved in Together"
-        time  = "August 15, 2009"
-        photo = "/photos/apartment.jpg"
-        alt   = "Photo fo Leslie’s and Eric’s apartment in Boston."}}
-
-    {{> event/header}}
-    {{> event/photo}}
-
-    <p>
-        After dating for over a year and half, Leslie and Eric were very much in love and decided to move in together. They were fortunate to find an <em>excellent</em> apartment in Boston's Back Bay neighborhood.
-    </p>
-
-    {{> event/time}}
-  {{/event}}
-
-  {{#event "Went on First Date"
-        time = "January 29, 2008"}}
+  {{#event "Winning Student Paper Competition"
+        time   = "June, 2016"}}
 
     {{> event/header}}
 
-    <p>
-        In late January, Leslie and Eric went on at snowboarding day-trip-only the two of them. Leslie realized that she really liked Eric. The next day a work, she decided to tell Eric via GChat (such a chicken) that she had feelings for him. Eric was shocked! Around that same time he had finally stopped trying to pursue Leslie; right when he stopped, the tables turned.
-    </p>
-    <p>
-        The next day Leslie and Eric went on their first date to a Tapas restaurant near their office. Leslie was so nervous that she couldn’t eat :)
-    </p>
-
+  <div class="event-contents">
+    <div class="event-top-photos">
+    {{#getJsonContext '[
+            [
+	        {"filename": "/photos/image21.jpg", "height": "220px", "alt": "Behnaz wins the JSM."},
+                {"filename": "/photos/image29.jpg", "height": "220px", "alt": "Behnaz at JSM."}
+	    ],[
+                {"filename": "/photos/image12.jpg", "height": "220px", "alt": "Behnaz presenting at JSM."}
+            ]
+	]'}}
+      {{> event/photo_many this}}
+    {{/getJsonContext}}
+    </div>
+    <div class="event-bottom-text">
+      <p>The best part of the PhD so far, happened at JSM 2016 this summer in Chicago, where Behnaz got her prize for the outstanding Bayesian research applied on climate science from the section on Bayesian Statistical Sciences (SBSS) and was recognized as Honorary mention in section on Statistics and Environment (ENVR), in the student paper competition, American Statistical Association (ASA), 2016.
+      </p>
     {{> event/time}}
+    </div>
+
+  </div>
   {{/event}}
 
-  {{#event "Became Snowboard Buddies"
-        time  = "January 2008"
-        photo = "/photos/snowboarding.jpg"
-        alt   = "Photo of Leslie and Eric on a chair lift."}}
 
-    {{> event/header}}
-    {{> event/photo}}
-
-    <p>
-        Leslie and Eric got to know each other better on weekend snowboarding trips in Vermont and New Hampshire with groups of friends. Leslie was impressed by Eric’s snowboarding and liked the way he moved.
-    </p>
-
-    {{> event/time}}
-  {{/event}}
-
-  {{#event "Met for the First Time"
-        time = "July 2007"}}
+  {{#event "Great PhD fun"
+        time   = "2012 - 2016"}}
 
     {{> event/header}}
 
-    <p>
-        Leslie and Eric were working in the same office building on the same floor, but for different companies. Shortly after Eric moved to Boston, the two met at the floor’s communal coffee station. (That might explain how Eric became a coffee aficionado.)
-    </p>
-    <p>
-        Eric kept seeing this cute girl on the floor (which of course was Leslie). And to increase his chances of running into her, he kept himself overly caffeinated and hydrated. This meant he had to make multiple trips to the communal kitchen, passing by Leslie’s office each time.
-    </p>
-    <p>
-        <strong>Finally,</strong> the two ran into each other—both waiting in line to use the coffee machine. Eric knew this was his moment and that he had to seize this opportunity. Eric told Leslie that he was new to town and trying to find a permanent place to live. Leslie having moved to Boston only a year earlier could relate, and invited Eric to hang out with her and her friends.
-    </p>
-    <p>
-        …Leslie gave Eric her phone number. <strong>Success!</strong>
-    </p>
-
+  <div class="event-contents">
+    <div class="event-top-photos">
+    {{#getJsonContext '[
+            [
+                {"filename": "/photos/image26.jpg", "height": "180px", "alt": "Summer BBQ"},
+                {"filename": "/photos/image34.jpg", "height": "180px", "alt": "Eating out at Gloria\'s"}
+            ],[
+                {"filename": "/photos/image11.jpg", "height": "210px", "alt": "House party"},
+                {"filename": "/photos/image30.jpg", "height": "210px", "alt": "More party"}
+            ],[
+                {"filename": "/photos/image31.jpg", "height": "180px", "alt": "Buzios"},
+                {"filename": "/photos/image33.jpg", "height": "180px", "alt": "More Buzios"}
+            ]
+	]'}}
+      {{> event/photo_many this}}
+    {{/getJsonContext}}
+    </div>
+    <div class="event-bottom-text">
+      <p>All 5 years of PhD has its own ups and downs, from when nothing works to all the PhD gathering and funs in Lund or at workshops. The last two pictures are from PASI 2014 in Rio, Brazil, a work shop that took place at the same as the football world cup.
+      </p>
     {{> event/time}}
+    </div>
+
+  </div>
   {{/event}}
 
-    <li class="timeline-events">
-        <ol class="l-grid">
-          {{#event "Moved: MI to Boston"
-                who  = "eric"
-                time = "June 2007"
-                map  = "ericf.map-33lesuym"}}
 
-            {{> event/header}}
-            {{> event/map}}
+  {{#event "Playing Badminton for Sweden"
+        time   = "2013 - 2015"}}
 
-            <p>
-                After graduating from Michigan State University, Eric headed East and moved to Boston.
-            </p>
+    {{> event/header}}
 
-            {{> event/time}}
-          {{/event}}
+  <div class="event-contents">
+    <div class="event-top-photos">
+    {{#getJsonContext '[
+            [
+                {"filename": "/photos/image08.jpg", "height": "220px", "alt": "This is behnaz"},
+                {"filename": "/photos/image16.jpg", "height": "220px", "alt": "Some text"}
+            ],[
+                {"filename": "/photos/image20.jpg", "height": "220px", "alt": "Some other text"},
+                {"filename": "/photos/image37.jpg", "height": "220px", "alt": "This is a title text"}
+            ]
+	]'}}
+      {{> event/photo_many this}}
+    {{/getJsonContext}}
+    </div>
+    <div class="event-bottom-text">
+      <p>In 2013, Behnaz started to play for Sweden in International tournament.The best rank she achieved with Swedish flag was in July 2015 in Road to Rio ranking list, where she had rank 84.</p>
+      <p>Under both Swedish and Iranian flag, Behnaz has competed in Badminton in five continents, more than 30 countries and 100 cities.</p>
+    {{> event/time}}
+    </div>
 
-          {{#event "Moved: VA to Boston"
-                who  = "leslie"
-                time = "July 2006"
-                map  = "ericf.map-bsmwt9pf"}}
+  </div>
+  {{/event}}
 
-            {{> event/header}}
-            {{> event/map}}
 
-            <p>
-                After graduating from Virginia Tech, Leslie headed North and moved to Boston.
-            </p>
+  {{#event "Badminton: Blood, Sweat and Tears"
+        time   = "2013"}}
 
-            {{> event/time}}
-          {{/event}}
-        </ol>
-    </li>
+    {{> event/header}}
+
+  <div class="event-contents">
+    <div class="event-top-photos">
+    {{#getJsonContext '[
+            [
+                {"filename": "/photos/image36.jpg", "height": "190px", "alt": "Some other text"},
+                {"filename": "/photos/image15.jpg", "height": "190px", "alt": "This is a title text"}
+            ],[
+                {"filename": "/photos/image01.jpg", "height": "220px", "alt": "Some text"}
+            ]
+	]'}}
+      {{> event/photo_many this}}
+    {{/getJsonContext}}
+    </div>
+    <div class="event-bottom-text">
+      <p>In 2013, after her recovery from ankle injury, she played in European University Games in Uppsala. Following that she started to practice in the morning 7-9, two times a week, in Copenhagen Badminton Center with Anu Nieminen (4 times olympian from Finland) as coach and a couple of great badminton players, including Nicola Cerfontyne (#1 in England) and Nanna Vainio (#1 in Finland).</p>
+      <p>Behnaz says, “I was getting up at 5:30 to reach the train at 6 to be at practice at 7. After practice, I had to rush to S-tog to reach the central to take the train to Lund to be at work at 10:30. You might ask: "why?". I would say, to reach my dreams, I will do anything.” </p>
+      <p>The top left picture shows one of the Tuesday's sessions with 1h 30min multi-shuttles. These multi-shuttle excercies had around 700-900 shuttle drills with high intensity. You can see the results in the top right picture.</p>
+    {{> event/time}}
+    </div>
+
+  </div>
+  {{/event}}
+
+
+  {{#event "Begin.PhD();"
+        time   = "January 1st, 2012"}}
+
+    {{> event/header}}
+
+  <div class="event-contents">
+    <div class="event-top-photos">
+    {{#getJsonContext '[
+            [
+                {"filename": "/photos/image23.jpg", "height": "220px", "alt": "Some text"},
+                {"filename": "/photos/image28.jpg", "height": "220px", "alt": "Some other text"}
+            ],[
+                {"filename": "/photos/image02.jpg", "height": "220px", "alt": "This is a title text"},
+                {"filename": "/photos/image32.jpg", "height": "220px", "alt": "This is more"}
+            ]
+	]'}}
+      {{> event/photo_many this}}
+    {{/getJsonContext}}
+    </div>
+    <div class="event-bottom-text">
+      <p>Behnaz started her PhD from January 1<sup>st</sup> 2012.</p>
+      <p>In the same year she dislocated her ankle (picture is available on request, if you haven’t seen it yet).
+She say “those moments of my life without Badminton is the most boring ones! I do stuff but it always feels like something is missing.”
+      </p>
+    {{> event/time}}
+    </div>
+
+  </div>
+  {{/event}}
+
+
+  {{#event "Moved to Lund"
+        time   = "2009 - 2012"}}
+
+    {{> event/header}}
+
+  <div class="event-contents">
+    <div class="event-top-photos">
+    {{#getJsonContext '[
+            [
+                {"filename": "/photos/image14.jpg", "height": "220px", "alt": "Some text"},
+                {"filename": "/photos/image09.jpg", "height": "220px", "alt": "Some other text"}
+            ],[
+                {"filename": "/photos/image04.jpg", "height": "220px", "alt": "This is a title text"}
+            ]
+	]'}}
+      {{> event/photo_many this}}
+    {{/getJsonContext}}
+    </div>
+    <div class="event-bottom-text">
+      <p>She stayed in Växjo for one year (2008/2009) finishing all the mandatory courses of her Mathematics and Modeling master. Then she moved to Lund to study her second master, Mathematical statistics, while finishing the thesis of the first one, in parallel.</p>
+      <p>She started working as a head coach in LUGI Badminton club 2010, where she began playing from 2012.</p>
+      <p>She completed her second master thesis in Lund 2012.</p>
+    {{> event/time}}
+    </div>
+
+  </div>
+  {{/event}}
+
+
+  {{#event "Hello Sweden"
+        time   = "2008"}}
+
+    {{> event/header}}
+
+  <div class="event-contents">
+    <div class="event-top-photos">
+    {{#getJsonContext '[
+            [
+                {"filename": "/photos/image00.jpg", "height": "220px", "alt": "Some other text"},
+                {"filename": "/photos/image17.jpg", "height": "220px", "alt": "This is a title text"}
+            ],[
+                {"filename": "/photos/image10.jpg", "height": "220px", "alt": "Some text"},
+                {"filename": "/photos/image05.jpg", "height": "220px", "alt": "This is a title text"}
+            ]
+	]'}}
+      {{> event/photo_many this}}
+    {{/getJsonContext}}
+    </div>
+    <div class="event-bottom-text">
+      <p>In 2008 Behnaz was admitted to Växjo University to study Mathematics and Modeling and moved to Sweden.</p>
+      <p>Behnaz says, “My first impression of arriving in Växjo was: ‘Where are all the people!?’. Växjö is a magical city with all the beautiful nature, including two big lakes in the center (even more around), forests and so on.” </p>
+      <p>During these times, she started to play in a Danish club, Greve, and participated in the morning practices with top 100 ranked girls.</p>
+    {{> event/time}}
+    </div>
+
+  </div>
+  {{/event}}
+
+
+  {{#event "World: Meet Behnaz!"
+        time   = "2004 - 2007"}}
+
+    {{> event/header}}
+
+  <div class="event-contents">
+    <div class="event-top-photos">
+    {{#getJsonContext '[
+            [
+                {"filename": "/photos/image19.jpg", "height": "220px", "alt": "Some other text"},
+                {"filename": "/photos/image25.jpg", "height": "220px", "alt": "This is a title text"}
+            ],[
+                {"filename": "/photos/image06.jpg", "height": "220px", "alt": "This is a title text"},
+                {"filename": "/photos/image22.jpg", "height": "220px", "alt": "Some text"}
+            ]
+	]'}}
+      {{> event/photo_many this}}
+    {{/getJsonContext}}
+    </div>
+    <div class="event-bottom-text">
+      <p>During her bachelor study, she became the only Iranian Badminton player who so far qualified for both the Asian Games and the World Championship, 2006. From 2005, the Iranian government agreed to send women badminton players abroad for some limited tournaments. This was made possible by the innovative design for the competition clothes made by Behnaz and her double partner Setayesh.</p>
+      <p>The lower left photo shows the moment that lead to her knee surgery.</p>
+    {{> event/time}}
+    </div>
+
+  </div>
+  {{/event}}
+
+
+  {{#event "Bezo #1"
+        time   = "1999 - 2003"}}
+
+    {{> event/header}}
+
+  <div class="event-contents">
+    <div class="event-top-photos">
+    {{#getJsonContext '[
+            [
+                {"filename": "/photos/image18.jpg", "height": "230px", "alt": "Some text"},
+                {"filename": "/photos/image24.jpg", "height": "230px", "alt": "Some other text"}
+            ]
+	]'}}
+      {{> event/photo_many this}}
+    {{/getJsonContext}}
+    </div>
+    <div class="event-bottom-text">
+      <p>Behnaz was admitted to Iran University of Science and Technology, Tehran, to study applied Mathematics. Public universities at that time had 300 000 seats each year and 1 500 000 applicants took a four-hour entrance exam on four general and three program-specific topics. She received rank 2 000 in the regional and 6 000 in the national level.</p>
+<p>During high school, Behnaz always received the best grade in Mathematics and the worst one in dictation.</p>
+<p>At the age of 14, she also became #1 Badminton player in Iran and won several national competitions.</p>
+      </p>
+    {{> event/time}}
+    </div>
+
+  </div>
+  {{/event}}
+
+
+  {{#event "Memories"
+        time   = "1988"}}
+
+    {{> event/header}}
+
+  <div class="event-contents">
+    <div class="event-top-photos">
+    {{#getJsonContext '[
+            [
+                {"filename": "/photos/image27.jpg", "height": "220px", "alt": "Some text"},
+                {"filename": "/photos/image03.png", "height": "220px", "alt": "Some other text"}
+            ]
+	]'}}
+      {{> event/photo_many this}}
+    {{/getJsonContext}}
+    </div>
+    <div class="event-bottom-text">
+      <p>Around age three, a miracle happened in her life during the war between Iran and Iraq. Her mother used to work in the laboratory of the biggest hospital in Iran. Behnaz spent time in the kindergarten on the other side of the hospital area while her mom was working. One of Iraqi jets targeted the hospital and the bomb hit the ground beside the kindergarten.
+Thankfully, the bomb didn't explode. It’s believed the reason is that construction work in the area exposed soft sand which the bomb landed on without exploding.</p>
+      <p>She says, “Unfortunately, one of my first memories in life is that accident. 2.5 years old, all I remember is that I was leading younger kids to shelter after the bomb hit  and all the windows in the area shattered. It was shocking. But perhaps I learned to live every moment of my life to its fullest. Nothing can be more painful and stressful than war.”
+      </p>
+    {{> event/time}}
+    </div>
+
+  </div>
+  {{/event}}
+
+
+  {{#event 'First injury'
+        time   = "1986"}}
+
+    {{> event/header}}
+
+  <div class="event-contents">
+    <div class="event-top-photos">
+    {{#getJsonContext '[
+            [
+                {"filename": "/photos/image07.jpg", "height": "320px", "alt": "Some text"}
+            ]
+	]'}}
+      {{> event/photo_many this}}
+    {{/getJsonContext}}
+    </div>
+    <div class="event-bottom-text">
+      <p>She was from beginning into sport activities and injuries. <br/>But pain is not something that makes her give up.
+      </p>
+    {{> event/time}}
+    </div>
+
+  </div>
+  {{/event}}
+
+
+
+  {{#event "It begins..."
+        time   = "1985"}}
+
+    {{> event/header}}
+
+  <div class="event-contents">
+    <div class="event-top-photos">
+    {{#getJsonContext '[
+            [
+                {"filename": "/photos/image13.jpg", "height": "320px", "alt": "Some text"}
+            ]
+	]'}}
+      {{> event/photo_many this}}
+    {{/getJsonContext}}
+    </div>
+    <div class="event-bottom-text">
+      <p>Behnaz is born on 17<sup>th</sup> Esfand 1363 or 7<sup>th</sup> March 1985 in Tehran, Iran. However, her official birthday is 2<sup>nd</sup> Farvardin 1364 or 22<sup>nd</sup> March 1985. As you might noticed with shifting 15 days she became 1 year younger in Iranian calendar.
+      </p>
+    {{> event/time}}
+    </div>
+
+  </div>
+  {{/event}}
+
 </ol>

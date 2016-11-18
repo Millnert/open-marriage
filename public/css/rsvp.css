@@ -7,6 +7,11 @@
     color: #f2c63d;
 }
 
+.button-event {
+    margin: 2em;
+    text-align: center;
+}
+
 .resend-email,
 .resend-submit {
     width: 100%;

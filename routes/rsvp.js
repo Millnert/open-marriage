@@ -10,7 +10,6 @@ exports.pub       = pub;
 exports.resend    = resend;
 exports.login     = login;
 exports.edit      = edit;
-exports.badminton = badminton;
 
 function pub(req, res, next) {
     if (req.afterEvent) {
