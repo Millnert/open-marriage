@@ -3,7 +3,7 @@ YUI.add('le-maps', function (Y) {
     if (mapboxgl.supported({failIfMajorPerformanceCaveat: true})) {
         console.log('mapbox-gl-js fully supported');
     } else if (mapboxgl.supported({failIfMajorPerformanceCaveat: false})) {
-	console.log('mapbox-gl-js not fully supported'),
+	console.log('mapbox-gl-js not fully supported');
     } else {
 	console.log('mapbox-gl-js not supported');
     }
