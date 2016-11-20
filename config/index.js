@@ -39,6 +39,7 @@ config = {
         layouts : path.resolve('views/layouts/'),
         partials: path.resolve('views/partials/'),
         emails  : path.resolve('views/emails/')
+        yui     : path.resolve('combo/yui/')
     },
 
     date: new Date('Mon Dec 19 2016 12:30:00 GMT+0200 (CET)'),

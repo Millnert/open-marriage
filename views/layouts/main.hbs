@@ -33,10 +33,14 @@
 
 {{{body}}}
 
-<script src="/js/yui-3.10.0-min.js"></script>
+<script src="/yui/{{yui_version}}/build/yui/yui{{min}}.js"></script>
 <script>
 {{{state}}}
-YUI().use('{{yui_module}}');
+YUI({
+    comboBase: '///yui/',
+    combine  : true,
+    root     : 'build/'
+}).use('{{yui_module}}');
 </script>
 
 </body>
