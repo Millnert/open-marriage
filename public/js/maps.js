@@ -1,5 +1,13 @@
 YUI.add('le-maps', function (Y) {
 
+    if (mapboxgl.supported({failIfMajorPerformanceCaveat: true})) {
+        console.log('mapbox-gl-js fully supported');
+    } else if (mapboxgl.supported({failIfMajorPerformanceCaveat: false})) {
+	console.log('mapbox-gl-js not fully supported'),
+    } else {
+	console.log('mapbox-gl-js not supported');
+    }
+
     var isRetina = Y.config.win.devicePixelRatio >= 2;
 
     Y.all('[data-map]').each(function (mapNode) {
