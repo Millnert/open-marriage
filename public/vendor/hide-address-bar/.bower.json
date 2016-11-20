@@ -1,0 +1,13 @@
+{
+  "name": "hide-address-bar",
+  "homepage": "https://github.com/scottjehl/Hide-Address-Bar",
+  "_release": "24599d0879",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "24599d0879c0dcff4da7020fdaddf7c47a5c546f"
+  },
+  "_source": "git://github.com/scottjehl/Hide-Address-Bar.git",
+  "_target": "*",
+  "_originalSource": "git://github.com/scottjehl/Hide-Address-Bar.git"
+}
