@@ -51,7 +51,7 @@ exports.config  = {
 
                 'le-maps': {
                     path    : 'js/maps.js',
-                    requires: ['node-base', 'mapbox-gl', 'mapbox', 'mapboxgltest']
+                    requires: ['node-base', 'mapbox', 'mapbox-gl', 'mapboxgltest']
                 },
 
                 'le-rsvp': {
