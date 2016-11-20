@@ -8,7 +8,7 @@ exports.config  = {
     combine: isProduction,
     filter : isProduction ? 'min' : 'raw',
     root   : 'build/' + YUI_VERSION + '/',
-    comboBase : '///yui3?',
+    comboBase : '///yui?',
 
     modules: {
         'mapbox-css': 'https://api.mapbox.com/mapbox.js/v2.4.0/mapbox.css',
