@@ -112,7 +112,7 @@ app.get( '/guests/:guest/', routes.guests.read);
 app.put( '/guests/:guest/', routes.guests.update);
 app.delete( '/guests/:guest/', routes.guests.deleteGuest);
 
-app.get('/yui/', [
+app.get('/yui3', [
     combo.combine({rootPath: config.dirs.yui}),
     combo.respond
 ]);
