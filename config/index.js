@@ -38,7 +38,7 @@ config = {
         views   : path.resolve('views/pages/'),
         layouts : path.resolve('views/layouts/'),
         partials: path.resolve('views/partials/'),
-        emails  : path.resolve('views/emails/')
+        emails  : path.resolve('views/emails/'),
         yui     : path.resolve('combo/yui/')
     },
 
