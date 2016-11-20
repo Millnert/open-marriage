@@ -274,6 +274,31 @@ She say “those moments of my life without Badminton is the most boring ones! I
   {{/event}}
 
 
+  {{#event "Inspiration"
+        time   = "1994"}}
+
+    {{> event/header}}
+
+  <div class="event-contents">
+    <div class="event-top-photos">
+    {{#getJsonContext '[
+            [
+                {"filename": "image38.jpg", "height": "220px", "alt": "Young learning"}
+            ]
+	]'}}
+      {{> event/photo_many this}}
+    {{/getJsonContext}}
+    </div>
+    <div class="event-bottom-text">
+      <p> ... ... ... ...
+      </p>
+    {{> event/time}}
+    </div>
+
+  </div>
+  {{/event}}
+
+
   {{#event "Memories"
         time   = "1988"}}
 

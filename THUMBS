@@ -1,0 +1,4 @@
+grep height views/pages/home.hbs | sort -k 2 | grep 320px
+cd public/photos
+height=210 ; for img in 11 30 ; do convert -thumbnail "x$height>" image${img}.jpg ../thumbs/thumb_image${img}.jpg ; done
+
