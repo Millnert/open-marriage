@@ -7,7 +7,8 @@ exports.version = YUI_VERSION;
 exports.config  = {
     combine: isProduction,
     filter : isProduction ? 'min' : 'raw',
-    root   : YUI_VERSION + '/',
+    root   : 'build/' + YUI_VERSION + '/',
+    comboBase : '///yui3?',
 
     modules: {
         'mapbox-css': 'https://api.mapbox.com/mapbox.js/v2.4.0/mapbox.css',

@@ -20,7 +20,7 @@
   {{/css}}
 
   {{#if typekit}}
-    <script src="//use.typekit.net/{{typekit}}.js"></script>
+    <script src="/js/{{typekit}}.js"></script>
     <script>
         try { Typekit.load(); } catch (e) {}
     </script>
@@ -36,11 +36,7 @@
 <script src="/yui3?{{yui_version}}/build/yui/yui{{min}}.js"></script>
 <script>
 {{{state}}}
-YUI({
-    comboBase: '///yui3?',
-    combine  : true,
-    root     : 'build/'
-}).use('{{yui_module}}');
+YUI().use('{{yui_module}}');
 </script>
 
 </body>
