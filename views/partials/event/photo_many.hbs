@@ -5,7 +5,7 @@
 {{#each this}}
 <li class="li-floated-elem{{#if rotate}} rotate{{rotate}}{{/if}}">
   <div class="event-photo-multi-img">
-    <img src="{{filename}}" alt="{{alt}}" title="{{alt}}" height="{{height}}"/>
+    <a href="{{filename}}" target=_blank"><img src="{{filename}}" alt="{{alt}}" title="{{alt}}" height="{{height}}"/></a>
     {{#if credit}}
     <a class="event-photo-credit" href="{{credit.url}}">{{credit.text}}</a>
     {{/if}}
