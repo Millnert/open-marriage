@@ -1,7 +1,7 @@
 var isProduction = process.env.NODE_ENV === 'production',
     version      = require('../package').version,
 
-    YUI_VERSION = '3.18.1';
+    YUI_VERSION = '3.10.0';
 
 exports.version = YUI_VERSION;
 exports.config  = {
