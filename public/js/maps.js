@@ -1,6 +1,10 @@
 YUI.add('le-maps', function (Y) {
 
-    var supportlevel = 0;
+    var supportlevel = 0,
+	accesstoken = 'pk.eyJ1IjoibWlsbG5lcnQiLCJhIjoiY2l2NnUxNjF2MDAwMTJ4bXZqNmJ4eHZuMiJ9.8CvG2KOAWS3dzDzPFBDNkg',
+	style = 'mapbox://styles/millnert/civ6u34b500572ilc703iaagy',
+	lat = 55.710529,
+	lon = 13.207675;
 
     if (mapboxgl.supported({failIfMajorPerformanceCaveat: true})) {
         console.log('mapbox-gl-js fully supported');
@@ -16,16 +20,17 @@ YUI.add('le-maps', function (Y) {
     var isRetina = Y.config.win.devicePixelRatio >= 2;
 
     if (supportlevel < 2) {
-        L.mapbox.accessToken = 'pk.eyJ1IjoibWlsbG5lcnQiLCJhIjoiY2l2NnUxNjF2MDAwMTJ4bXZqNmJ4eHZuMiJ9.8CvG2KOAWS3dzDzPFBDNkg';
-        var map = L.mapbox.map('map', 'mapbox.streets').setView([55.710529, 13.207675], 13);
+        L.mapbox.accessToken = accesstoken;
+        var map = L.mapbox.map('map', 'mapbox.streets').setView([lat, lon], 13);
+	L.mapbox.styleLayer(style).addTo(map);
     } else {
         Y.all('[data-map]').each(function (mapNode) {
-        mapboxgl.accessToken = 'pk.eyJ1IjoibWlsbG5lcnQiLCJhIjoiY2l2NnUxNjF2MDAwMTJ4bXZqNmJ4eHZuMiJ9.8CvG2KOAWS3dzDzPFBDNkg';
+        mapboxgl.accessToken = accesstoken;
             var map = new mapboxgl.Map({
-                container: 'map', // container id
-                style: 'mapbox://styles/millnert/civ6u34b500572ilc703iaagy', //stylesheet location
-                center: [13.207675, 55.710529], // starting position
-                zoom: 17 // starting zoom
+                container: 'map',
+                style: style,
+                center: [lon, lat],
+                zoom: 17
             });
         });
     }
