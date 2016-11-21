@@ -3,7 +3,9 @@
 var async = require('async'),
 
     email = require('../lib/email'),
-    invs  = require('../lib/invitations');
+    invs  = require('../lib/invitations'),
+    INVITATIONS = 'SELECT * FROM invitations ORDER BY id';
+
 
 process.stdin.resume();
 process.stdin.setEncoding('utf8');
@@ -23,7 +25,7 @@ process.stdin.once('data', function (answer) {
 function sendRsvpEmails() {
     console.log('Loading invitations from database...');
 
-    invs.loadInvitations(function (err, invitations) {
+    invs.loadInvitationsWithSQL(INVITATIONS, function (err, invitations) {
         if (err) { throw err; }
 
         async.eachSeries(invitations, sendEmail, function (err) {
