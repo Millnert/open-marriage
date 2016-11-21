@@ -1,7 +1,3 @@
-function sleep(ms) {
-	  return new Promise(resolve => setTimeout(resolve, ms));
-}
-
 YUI.add('le-rsvp', function (Y) {
 
     // -- Y.Models Overrides ---------------------------------------------------
